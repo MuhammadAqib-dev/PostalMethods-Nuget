@@ -1,4 +1,4 @@
-FileStream ContentFile = File.OpenRead("E:\\Hello.pdf");
+            FileStream ContentFile = File.OpenRead("E:\\Hello.pdf");
 
             LetterProperties LetterProp = new LetterProperties();
             LetterProp.isColored = true;
