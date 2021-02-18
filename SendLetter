@@ -24,16 +24,6 @@
             RecieverAddress.IsReturnAddressAppended = true;
             RecieverAddress.ReturnAddressPosition = 1;
 
-            SenderAddress senderAddress = new SenderAddress();
-            senderAddress.AddressCity = "Chelmsford";
-            senderAddress.AddressCompany = "Car Works";
-            senderAddress.AddressCountry = "United States";
-            senderAddress.AddressLine1 = "66-4 Parkhurst Rd";
-            senderAddress.AddressLine2 = "";
-            senderAddress.AddressState = "Massachusetts";
-            senderAddress.AddressZipcode = "1824";
-
-
             PostalMethods PM = new PostalMethods("Your SecretKey from Portal");
 
             SendLetterResult letterSend = PM.SendLetter(RefrenceId, Description, LetterProp, RecieverAddress, ContentFile);
