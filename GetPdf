@@ -1,1 +1,10 @@
 
+            PostalMethods PM = new PostalMethods("Your SecretKey from Portal");
+
+
+            FileResult pdf = PM.GetPdf(LetterId); //Letter Document ID (Not Job ID)
+
+            if (pdf != null)
+            {
+                File.WriteAllBytes("Letter " + LetterId.ToString() + ".pdf", ((FileContentResult)pdf).FileContents);
+            }
