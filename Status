@@ -1,1 +1,21 @@
 
+            PostalMethods PM = new PostalMethods("Your SecretKey from Portal"); 
+
+            LetterStatusList status = PM.LetterStatus(idList);
+            
+            if(status.APIResponseStatus == "OK")
+            {
+                foreach (LetterStatus Ls in status.status)
+                {
+                    var Id = Ls.Id;
+                    var InvalidReason = Ls.InvalidReason;
+                    var IsAddressValid = Ls.IsAddressValid;
+                    var IsCancelled = Ls.IsCancelled;
+                    var IsValid = Ls.IsValid;
+                    var JobStatusId = Ls.JobStatusId;
+                    var LastUpdateTime = Ls.LastUpdateTime;
+                    var Status = Ls.Status;
+                    var Description = Ls.Description;
+                }
+            }
+            
