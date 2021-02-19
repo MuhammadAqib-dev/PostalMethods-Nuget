@@ -1,1 +1,25 @@
 
+            PostalMethods pm = new PostalMethods("Your SecretKey from Portal");
+
+            SendLetterResult letterSend = pm.SendLetter("12qwe", "Description from SDK", letterProp, returnAddress, file);
+            
+            LetterDetail details = pm.LetterDetails(42802);
+
+            if( details.APIResponseStatus == "OK")
+            {
+                var Id = details.Id;
+                var InvalidReason = details.InValidReason;
+                var IsAddressValid = details.IsAddressValid;
+                var IsBatch = details.IsBatch;
+                var IsPerforation = details.IsPerforation;
+                var IsReplyOnEnvelop = details.IsReplyOnEnvelop;
+                var IsValid = details.IsValid;
+                var MailerType = details.MailerType;
+                var MyDescription = details.MyDescription;
+                var NumOfSheet = details.NumOfSheet;
+                var Price = details.Price;
+                var Status = details.Status;
+                var StatusDescription = details.StatusDescription;
+                var StatusId = details.StatusId;
+                var SubmitedTime = details.SubmitedTime;
+            }
