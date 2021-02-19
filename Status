@@ -1,6 +1,11 @@
 
             PostalMethods PM = new PostalMethods("Your SecretKey from Portal"); 
 
+            List<long> idList = new List<long>();
+            idList.Add(42802);
+            idList.Add(42803);
+            idList.Add(42804);
+            
             LetterStatusList status = PM.LetterStatus(idList);
             
             if(status.APIResponseStatus == "OK")
