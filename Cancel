@@ -1,1 +1,19 @@
 
+            PostalMethods pm = new PostalMethods("Your SecretKey from Portal"); 
+
+
+            SendLetterResult letterSend = pm.SendLetter("12qwe", "Description from SDK", letterProp, returnAddress, file);
+            
+            if(letterSend.APIResponseStatus == "OK" )
+            {
+                var Id = letterSend.Id;
+                var Description = letterSend.Description;
+                var Message = letterSend.Message;
+                var Perforation = letterSend.Perforation;
+                var ReplyEnvelope = letterSend.ReplyEnvelope;
+                var ReturnAddress = letterSend.ReturnAddress;
+                var SendAddress = letterSend.SendAddress;
+                var Source = letterSend.Source;
+                var Status = letterSend.Status;
+                var ValidAddress = letterSend.ValidAddress;
+            }
