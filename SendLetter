@@ -12,21 +12,21 @@
 
             var Description = "Letter for Pormotion";
 
-            Address RecieverAddress = new Address();
+            Address ReturnAddress = new Address();
 
-            RecieverAddress.AddressCompany = "Sample Company";
-            RecieverAddress.AddressLine1 = "700 Oak Street";
-            RecieverAddress.AddressLine2 = "";
-            RecieverAddress.AddressCity = "Brockton";
-            RecieverAddress.AddressState = "Massachusetts";
-            RecieverAddress.AddressZipcode = "2301";
-            RecieverAddress.AddressCountry = "United States";
-            RecieverAddress.IsReturnAddressAppended = true;
-            RecieverAddress.ReturnAddressPosition = 1;
+            ReturnAddress.AddressCompany = "Sample Company";
+            ReturnAddress.AddressLine1 = "700 Oak Street";
+            ReturnAddress.AddressLine2 = "";
+            ReturnAddress.AddressCity = "Brockton";
+            ReturnAddress.AddressState = "Massachusetts";
+            ReturnAddress.AddressZipcode = "2301";
+            ReturnAddress.AddressCountry = "United States";
+            ReturnAddress.IsReturnAddressAppended = true;
+            ReturnAddress.ReturnAddressPosition = 1;
 
             PostalMethods PM = new PostalMethods("Your SecretKey from Portal");
 
-            SendLetterResult letterSend = PM.SendLetter(RefrenceId, Description, LetterProp, RecieverAddress, ContentFile);
+            SendLetterResult letterSend = PM.SendLetter(RefrenceId, Description, LetterProp, ReturnAddress, ContentFile);
 
             var APIResponse = letterSend.APIResponseStatus;
             if (APIResponse == "OK")
