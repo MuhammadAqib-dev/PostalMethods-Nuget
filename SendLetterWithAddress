@@ -1,1 +1,55 @@
 
+            FileStream ContentFile = File.OpenRead("E:\\Hello.pdf");
+
+            LetterProperties LetterProp = new LetterProperties();
+            LetterProp.isColored = true;
+            LetterProp.isDoubleSided = false;
+            LetterProp.perforation = true;
+            LetterProp.replyOnEnvelope = false;
+
+            var IsPlaceholder = false;
+
+            var RefrenceId = "1234";
+
+            var Description = "Letter for Pormotion";
+
+            Address returnAddress = new Address();
+
+            returnAddress.AddressCompany = "Sample Company";
+            returnAddress.AddressLine1 = "700 Oak Street";
+            returnAddress.AddressLine2 = "";
+            returnAddress.AddressCity = "Brockton";
+            returnAddress.AddressState = "Massachusetts";
+            returnAddress.AddressZipcode = "2301";
+            returnAddress.AddressCountry = "United States";
+            returnAddress.IsReturnAddressAppended = true;
+            returnAddress.ReturnAddressPosition = 1;
+
+            SendAddress recieverAddress = new SendAddress();
+            recieverAddress.AddressCity = "Chelmsford";
+            recieverAddress.AddressCompany = "Car Works";
+            recieverAddress.AddressCountry = "United States";
+            recieverAddress.AddressLine1 = "66-4 Parkhurst Rd";
+            recieverAddress.AddressLine2 = "";
+            recieverAddress.AddressState = "Massachusetts";
+            recieverAddress.AddressZipcode = "1824";
+
+
+            PostalMethods PM = new PostalMethods("Your SecretKey from Portal");
+            
+            SendLetterWithAddressResult result = PM.SendLetterWithAddress(RefrenceId, Description, LetterProp, returnAddress, recieverAddress, IsPlaceholder, ContentFile);
+            
+            if (result.APIResponseStatus == "OK")
+            {
+                var Id = result.Id;
+                var Description = result.Description;
+                var Message = result.Message;
+                var Perforation = result.Perforation;
+                var ReplyEnvelope = result.ReplyEnvelope;
+                var ReturnAddress = result.ReturnAddress;
+                var SendAddress = result.SendAddress;
+                var source = result.Source;
+                var Status = result.Status;
+                var ValidAddress = result.ValidAddress;
+            }
+            
